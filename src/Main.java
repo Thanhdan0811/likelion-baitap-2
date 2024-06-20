@@ -5,7 +5,7 @@ public class Main {
 
         // Bài 1
         System.out.println(getFirstNoRepeatCharUseFor("gibblegabbler"));
-        System.out.println(getFirstNoRepeatCharUseList("gibblegabbler"));
+        System.out.println(getFirstNoRepeatCharUseList("gibblegiabbaler"));
 
         // Bài 2
         String[] strInput = {"Red", "Green", "Orange", "White", "Black", "Green"};
@@ -34,16 +34,20 @@ public class Main {
     public static String getFirstNoRepeatCharUseList(String inputStr) {
         List<String> listChars = new ArrayList<String>();
 
+
         for(int i = 0; i < inputStr.length(); i++) {
+            // Nếu chưa xuất hiện thì add vào list.
             if(!listChars.contains(String.valueOf(inputStr.charAt(i)))) {
                 listChars.add(String.valueOf(inputStr.charAt(i)));
             } else {
+                // Nếu đã xuất hiện thì remove đi.
                 listChars.remove(String.valueOf(inputStr.charAt(i)));
             }
         }
 
-        if(listChars.get(0) == null || Objects.equals(listChars.get(0), "")) {
-            return "";
+        // nếu ở không là null hoặc là rỗng thì trả về rỗng
+        if(listChars.isEmpty() || Objects.equals(listChars.get(0), "")) {
+            return "no repeats";
         }
 
         return listChars.get(0);
