@@ -13,7 +13,6 @@ public class Main {
     }
 
     public static String getFirstNoRepeatCharUseFor(String inputStr) {
-
         String firstChar = "";
         for(int i = 0; i < inputStr.length() - 1; i++) {
             firstChar = String.valueOf(inputStr.charAt(i));
@@ -23,11 +22,8 @@ public class Main {
                     break;
                 }
             }
-
             if(!firstChar.isEmpty()) break;
-
         }
-
         return firstChar;
     }
 
