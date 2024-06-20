@@ -5,6 +5,7 @@ public class Main {
 
         // Bài 1
         System.out.println(getFirstNoRepeatCharUseFor("gibblegabbler"));
+        System.out.println(getFirstNoRepeatCharUseList("gibblegabbler"));
 
         // Bài 2
         String[] strInput = {"Red", "Green", "Orange", "White", "Black", "Green"};
@@ -30,8 +31,22 @@ public class Main {
         return firstChar;
     }
 
-    public static String getFirstNoRepeatCharUseMap(String inputStr) {
-        return "";
+    public static String getFirstNoRepeatCharUseList(String inputStr) {
+        List<String> listChars = new ArrayList<String>();
+
+        for(int i = 0; i < inputStr.length(); i++) {
+            if(!listChars.contains(String.valueOf(inputStr.charAt(i)))) {
+                listChars.add(String.valueOf(inputStr.charAt(i)));
+            } else {
+                listChars.remove(String.valueOf(inputStr.charAt(i)));
+            }
+        }
+
+        if(listChars.get(0) == null || Objects.equals(listChars.get(0), "")) {
+            return "";
+        }
+
+        return listChars.get(0);
     }
 
     public static String[] sortListString(String[] inputArrStr) {
