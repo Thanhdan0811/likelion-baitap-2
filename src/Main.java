@@ -51,15 +51,14 @@ public class Main {
     }
 
     public static String[] sortListString(String[] inputArrStr) {
-
+        // bubble sort
         for(int i = 0; i < inputArrStr.length - 1; i++) {
             for(int j = i + 1; j < inputArrStr.length; j++) {
-                String strAtI = inputArrStr[i];
-                String strAtJ = inputArrStr[j];
-                int compareResult = strAtI.compareTo(strAtJ);
+                int compareResult = inputArrStr[i].compareTo(inputArrStr[j]);
                 if(compareResult > 0) {
-                    inputArrStr[i] = strAtJ;
-                    inputArrStr[j] = strAtI;
+                    String temp = inputArrStr[i];
+                    inputArrStr[i] = inputArrStr[j];
+                    inputArrStr[j] = temp;
                 }
             }
         }
