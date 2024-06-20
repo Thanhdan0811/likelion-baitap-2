@@ -34,6 +34,7 @@ public class Main {
     public static String getFirstNoRepeatCharUseList(String inputStr) {
         List<String> listChars = new ArrayList<String>();
 
+        if(inputStr.isEmpty()) return "have no string";
 
         for(int i = 0; i < inputStr.length(); i++) {
             // Nếu chưa xuất hiện thì add vào list.
